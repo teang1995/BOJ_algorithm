@@ -1,10 +1,13 @@
 # 쉬운 계단 수
 
 N = int(input())
-ans = [0 for _ in range(101)]
-ans[1] = 9
-ans[2] = 17
+ones = [0 for _ in range(101)]
+twos = [0 for _ in range(101)]
+ones[1] = 7
+twos[1] = 2
 for i in range(2, N + 1):
-    ans[i] = 2 * ans[i - 1] - i
-print(ans[N])
-# wrong, tomorrow
+    ones[i] = 2 * ones[i - 1] - 1
+    twos[i] = i
+    print(i)
+ans = ones[N] + twos[N]
+print(ans % 1000000000)
